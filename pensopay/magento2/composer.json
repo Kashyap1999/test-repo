@@ -1,0 +1,33 @@
+{
+  "name": "pensopay/magento2",
+  "description": "Implements integration with the PensoPay payment service provider.",
+  "authors": [
+    {
+      "name": "Rasmus Bech",
+      "email": "rb@pensopay.com"
+    },
+    {
+      "name": "Dimitris Preketes",
+      "email": "d.preketes@codecave.eu"
+    }
+  ],
+  "require": {
+    "php": ">=7.3",
+    "symfony/intl": "^5.0 || ^6.0",
+    "quickpay/quickpay-php-client": "^1.0",
+    "ext-json": "*"
+  },
+  "type": "magento2-module",
+  "license": [
+    "OSL-3.0",
+    "AFL-3.0"
+  ],
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "PensoPay\\Payment\\": ""
+    }
+  }
+}

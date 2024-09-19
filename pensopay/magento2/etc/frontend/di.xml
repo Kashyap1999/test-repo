@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Checkout\Model\CompositeConfigProvider">
+        <arguments>
+            <argument name="configProviders" xsi:type="array">
+                <item name="pensopay_config_provider" xsi:type="object">PensoPay\Payment\Model\Ui\Method\PensoPayConfigProvider</item>
+                <item name="pensopay_viabill_config_provider" xsi:type="object">PensoPay\Payment\Model\Ui\Method\ViabillConfigProvider</item>
+                <item name="pensopay_anyday_config_provider" xsi:type="object">PensoPay\Payment\Model\Ui\Method\AnydayConfigProvider</item>
+                <item name="pensopay_mobilepay_config_provider" xsi:type="object">PensoPay\Payment\Model\Ui\Method\MobilePayConfigProvider</item>
+                <item name="pensopay_dankort_config_provider" xsi:type="object">PensoPay\Payment\Model\Ui\Method\DankortConfigProvider</item>
+                <item name="pensopay_paypal_config_provider" xsi:type="object">PensoPay\Payment\Model\Ui\Method\PayPalConfigProvider</item>
+                <item name="pensopay_klarnapayments_config_provider" xsi:type="object">PensoPay\Payment\Model\Ui\Method\KlarnaPaymentsConfigProvider</item>
+                <item name="pensopay_vipps_config_provider" xsi:type="object">PensoPay\Payment\Model\Ui\Method\VippsConfigProvider</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <!-- Viabill -->
+    <type name="Magento\Framework\Pricing\Render">
+        <plugin name="viabill-tag" type="PensoPay\Payment\Plugin\Framework\Pricing\Render" />
+    </type>
+
+    <type name="Magento\Framework\App\Request\CsrfValidator">
+        <plugin name="pensopay-skipcsrf-translate" type="PensoPay\Payment\Plugin\Framework\App\Request\CsrfValidator" />
+    </type>
+</config>
