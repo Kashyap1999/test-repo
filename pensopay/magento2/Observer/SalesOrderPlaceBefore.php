@@ -15,7 +15,7 @@ use PensoPay\Payment\Model\Ui\Method\KlarnaPaymentsConfigProvider;
 use PensoPay\Payment\Model\Ui\Method\PayPalConfigProvider;
 use PensoPay\Payment\Model\Ui\Method\VippsConfigProvider;
 
-class SalesOrderPlaceAfter implements ObserverInterface
+class SalesOrderPlaceBefore implements ObserverInterface
 {
     /** @var Data $_pensoPayHelper */
     protected $_pensoPayHelper;
